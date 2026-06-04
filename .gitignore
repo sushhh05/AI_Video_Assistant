@@ -1,0 +1,27 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Environment Variables (Keep your API keys safe!)
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Project specific temp folders
+temp/
+*.mp4
+*.mp3
+*.wav
+
+# Streamlit specific
+.streamlit/
+
+# OS specific
+.DS_Store
+Thumbs.db

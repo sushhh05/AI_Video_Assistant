@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────
+# AI Meeting Assistant — requirements.txt
+# Python >= 3.10 recommended
+# ─────────────────────────────────────────────
+
+# ── Audio Acquisition ──────────────────────────
+yt-dlp>=2024.4.9                  # Download audio from YouTube URLs
+pydub>=0.25.1                     # Audio slicing / format conversion
+ffmpeg-python>=0.2.0              # FFmpeg bindings (ffmpeg binary required separately)
+
+# ── Transcription (local Whisper) ──────────────
+openai-whisper>=20231117          # Local Whisper ASR
+torch>=2.2.0                      # PyTorch backend for Whisper
+torchaudio>=2.2.0                 # Audio I/O utilities for torch
+
+# ── Translation (Hindi → English) ──────────────
+deep-translator>=1.11.4           # Lightweight translation wrapper (Google backend)
+# Alternative: uncomment below to use Helsinki-NLP MarianMT locally instead
+# transformers>=4.40.0
+# sentencepiece>=0.2.0
+
+# ── LLM / LangChain (Summarisation & Action Items) ─
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-community>=0.2.0
+langchain-mistralai>=0.1.0        # LangChain integration for Mistral API
+mistralai>=0.4.0                  # Mistral AI Python SDK (free-tier API)
+
+# ── RAG Pipeline ───────────────────────────────
+chromadb>=0.5.0                   # Local vector store
+sentence-transformers>=2.7.0      # HuggingFace embeddings (all-MiniLM-L6-v2 etc.)
+transformers>=4.40.0              # HuggingFace model hub
+huggingface-hub>=0.23.0           # Hub client for model downloads
+tokenizers>=0.19.0                # Fast tokenisers used by sentence-transformers
+
+# ── Streamlit UI ───────────────────────────────
+streamlit>=1.35.0
+streamlit-chat>=0.1.1             # Chat message components
+watchdog>=4.0.0                   # Streamlit file-watcher (performance)
+
+# ── PDF & TXT Export ───────────────────────────
+fpdf2>=2.7.9                      # Pure-Python PDF generation
+reportlab>=4.2.0                  # Alternative / richer PDF export
+
+# ── General Utilities ──────────────────────────
+python-dotenv>=1.0.1              # Load .env for API keys
+numpy>=1.26.0
+tqdm>=4.66.0                      # Progress bars
+pydantic>=2.7.0                   # Data validation (used by LangChain internals)
+requests>=2.32.0
+
